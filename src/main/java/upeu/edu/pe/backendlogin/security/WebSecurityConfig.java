@@ -42,9 +42,13 @@ public class WebSecurityConfig {
 				.authorizeRequests()
 				// API PUBLICAS
 				.antMatchers(HttpMethod.POST, "/api/usuario/create-usuario").permitAll()
+				.antMatchers(HttpMethod.GET, "/api/organizacion/listar").permitAll()
+				.antMatchers(HttpMethod.GET, "/api/ruos/listar").permitAll()
+				
 				// API PRIVADAS
 				.antMatchers(HttpMethod.GET, "/api/categoria/get-all").hasAuthority("ADMIN_ROLE")
 				.antMatchers(HttpMethod.GET, "/api/categoria/get-categoria/**").hasAuthority("USER_ROLE")
+				.antMatchers(HttpMethod.GET, "/api/categoria/get-categoria/**").hasAuthority("MESAPARTES_ROLE")
 				.anyRequest()
 				.authenticated()
 				.and()

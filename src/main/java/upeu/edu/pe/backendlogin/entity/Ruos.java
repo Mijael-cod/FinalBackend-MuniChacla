@@ -9,21 +9,23 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
-@Entity
-@Table(name = "categoria")
 @Data
-public class Categoria {
+@Entity
+@Table(name = "ruos")
 
+public class Ruos {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idruos")
 	
-	@Column(name = "id_categoria")
-	private int id_categoria;
+	private int idruos;
+	private String codigoos;
+	private String nombreos;
+	private String zona;
+	private String fechainicio;
+	private String fechavigencia;
+	private String resolucion;
 	
-	@Column(name = "nombre_categoria")
-	private String nombre_categoria;
-	
-	
-	
-		
+
 }

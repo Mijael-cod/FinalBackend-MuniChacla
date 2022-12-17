@@ -15,9 +15,11 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "rol")
+
 public class Rol {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	@Column(name = "idrol")
 	private int idrol;
 	private String nombrerol;
